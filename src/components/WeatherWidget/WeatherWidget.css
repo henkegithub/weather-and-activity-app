@@ -1,0 +1,9 @@
+.weather-widget {
+  display: flex;
+  justify-content: center;
+  gap: 6em;
+}
+
+.weather-widget span {
+  font-size: 3em;
+}
