@@ -1,11 +1,11 @@
 import "./App.css";
-import { Form } from "./components/Form/Form";
+import { Form } from "./components/Form";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
-import { List } from "./components/List/List";
-import { ListHeading } from "./components/ListHeading/ListHeading";
+import { List } from "./components/List";
+import { ListHeading } from "./components/ListHeading";
 import { useEffect, useState } from "react";
-import { WeatherWidget } from "./components/WeatherWidget/WeatherWidget";
+import { WeatherWidget } from "./components/WeatherWidget";
 function App() {
   const [weather, setWeather] = useState();
   const [activities, setActivities] = useLocalStorageState("activities", {
