@@ -37,6 +37,10 @@ function App() {
   function handleAddActivity(activity) {
     setActivities([...activities, { ...activity, id: uid() }]);
   }
+
+  function handleDeleteActivity(id) {
+    setActivities(activities.filter((activity) => activity.id !== id));
+  }
   console.log("activities:", activities);
   return (
     <div className="App">
@@ -49,6 +53,7 @@ function App() {
         activities={activities.filter(
           (activity) => activity.isForGoodWeather === !!weather?.isGoodWeather
         )}
+        onDeleteActivity={handleDeleteActivity}
       />
       <Form onAddActivity={handleAddActivity} />
     </div>
