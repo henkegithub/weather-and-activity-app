@@ -24,6 +24,8 @@ function App() {
   });
 
   useEffect(() => {
+    const id = setInterval(getWeather, 5000);
+
     async function getWeather() {
       const weatherData = await (
         await fetch("https://example-apis.vercel.app/api/weather")
@@ -31,7 +33,9 @@ function App() {
       console.log("weatherData", weatherData);
       setWeather(weatherData);
     }
-    getWeather();
+    return () => {
+      clearInterval(id);
+    };
   }, []);
 
   function handleAddActivity(activity) {
